@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Discusion_Github Public</string>
+    <string name="app_name">GitHub Repos Public</string>
+    <string name="search_hint">Buscar usuario (ej. mojombo, square, google)...</string>
+    <string name="empty_repos_msg">No se encontraron repositorios públicos para este usuario</string>
+    <string name="error_network">Sin conexión a Internet. Comprueba tu red.</string>
+    <string name="error_user_not_found">Usuario no encontrado en GitHub (Error 404)</string>
+    <string name="avatar_desc">Avatar del propietario</string>
+    <string name="stars_symbol">⭐</string>
+    <string name="forks_symbol">🍴</string>
 </resources>

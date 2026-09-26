@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="6dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Avatar del Propietario -->
+        <ImageView
+            android:id="@+id/ivOwnerAvatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:contentDescription="@string/avatar_desc"
+            android:src="@drawable/ic_person_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Nombre del Repositorio -->
+        <TextView
+            android:id="@+id/tvRepoName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/github_blue"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvPrivacyBadge"
+            app:layout_constraintStart_toEndOf="@+id/ivOwnerAvatar"
+            app:layout_constraintTop_toTopOf="@+id/ivOwnerAvatar"
+            tools:text="RetrofitDogApp" />
+
+        <!-- Badge de Visibilidad Pública -->
+        <TextView
+            android:id="@+id/tvPrivacyBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/github_badge_bg"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="Public"
+            android:textColor="@color/github_text_secondary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRepoName" />
+
+        <!-- Descripción del Repositorio -->
+        <TextView
+            android:id="@+id/tvRepoDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/github_text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvRepoName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepoName"
+            tools:text="Aplicación móvil en Kotlin para consumir la API pública de Dog CEO utilizando Retrofit y Picasso." />
+
+        <!-- Fila Inferior con Metadatos (Lenguaje, Estrellas, Forks) -->
+        <LinearLayout
+            android:id="@+id/layoutMeta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvRepoName"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepoDescription">
+
+            <!-- Lenguaje Predominante -->
+            <TextView
+                android:id="@+id/tvRepoLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/github_dark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Kotlin" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp" />
+
+            <!-- Contador de Estrellas -->
+            <TextView
+                android:id="@+id/tvRepoStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/github_text_secondary"
+                android:textSize="12sp"
+                tools:text="⭐ 150" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp" />
+
+            <!-- Contador de Forks -->
+            <TextView
+                android:id="@+id/tvRepoForks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/github_text_secondary"
+                android:textSize="12sp"
+                tools:text="🍴 32" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
